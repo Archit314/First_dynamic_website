@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodies-Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    {{!-- <h1>Our home page</h1> --}}
+
+    {{!-- website navigation bar --}}
+    {{>navbar data=details}}
+
+    {{!-- website sliders section  --}}
+    {{> slider slide=slides}}
+
+
+    {{!-- banner 1 section  --}}
+    <section class="banner1_section py-5 banner1_background" style="color:blanchedalmond;">
+       <div class="container text-center"> 
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Eat tasty food</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores dolore facere pariatur ea fugiat dicta possimus itaque molestiae ab laborum voluptas suscipit voluptatibus autem provident modi nemo, non, deserunt sed!
+            </p>
+            <button class="btn btn-outline-dark">Grab Food</button>
+          </div>
+        </div>
+       </div>
+    </section>
+
+
+    {{!-- website services section  --}}
+    <section id="services_section" class="py-3">
+        <div class="container">
+          <h1 class="text-center">Our Services</h1>
+          <div class="row mt-5">
+
+            {{!-- first row and first service colum --}}
+            {{#each services}}
+            <div class="col-md-4">
+
+              {{!-- cards looping  --}}
+               <div class="card">
+                 <div class="card-body">
+                  <div class="container text-center service_icon">
+                   <i class="{{this.icon}}"></i>
+                  </div>
+                   <h4 class="card-title">{{this.title}}</h4>
+                   <p>{{this.description}}</p>
+                    <a href="{{this.link}}">{{this.linkText}}</a>
+                    <a href="#!" class="ml-5">Support</a>
+                 </div>
+               </div>
+            </div>
+            {{/each}}
+
+
+          </div>
+        </div>
+    </section>
+
+
+    {{!-- banner2 section  --}}
+    <section class="banner2_section py-5">
+      <div class="container  text-center">
+        <div class="row">
+          {{!-- left side coloum where text will be shown --}}
+          <div class="col-md-6 pt-5">
+             <h3>Phle pait pooja , fir koi kaam dooja</h3>
+             <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. In amet natus eveniet temporibus ea, sint vitae illo dolores, iure beatae veniam corporis ad assumenda obcaecati tenetur provident accusamus tempora hic.
+             </p>
+             <buttom class="btn btn-primary">Click here</buttom>
+          </div>
+          {{!-- right side colum where image will be shown --}}
+          <div class="col-md-6">
+            <img src="/static/images/food.webp" style="height: 18rem;" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {{!-- banner 3 section --}}
+    <section class="banner2_section py-5">
+      <div class="container  text-center">
+        <div class="row">
+
+          {{!-- left side coloum where text will be shown --}}
+          <div class="col-md-6">
+            <img src="/static/images/food.webp" style="height: 18rem;" alt="">
+          </div>
+
+          {{!-- right side colum where image will be shown --}}
+          <div class="col-md-6 pt-5">
+             <h3>Phle pait pooja , fir koi kaam dooja</h3>
+             <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. In amet natus eveniet temporibus ea, sint vitae illo dolores, iure beatae veniam corporis ad assumenda obcaecati tenetur provident accusamus tempora hic.
+             </p>
+             <buttom class="btn btn-primary">Click here</buttom>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+    {{!-- from here contact section will be start  --}}
+    <section id="contact_us_section" class="py-5  formbackground">
+      <div class="container">
+        <h1 class="text-center">Contact Us </h1>
+        <div class="row">
+          <div class="col-md-12">
+            <form action="/process-contact-form" method="post">
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="contactNumberField" class="form-label">Contact Number</label>
+                <input name="phone" type="phone" class="form-control" id="contactNumberField">
+              </div>
+
+              <div class="form-floating mt-2">
+                <textarea name="query" class="form-control" style="height: 14rem;" placeholder="Enter your query if any" id="queryField"></textarea>
+                <label for="queryField">Your auery</label>
+              </div>
+
+              <div class="container text-center my-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {{!-- about section --}}
+    <section id="about_section" class=" py-5 text-center">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+          <h3>About this site</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem laudantium expedita enim. Corrupti adipisci, minus earum dolore atque dolorem dicta. Neque unde culpa at necessitatibus adipisci eos quis dolores dolor.
+            Eum quia quas, dolor praesentium suscipit, molestias sequi est ex ipsa provident ut sed mollitia alias tempore expedita. Adipisci cumque perspiciatis distinctio dolorum, veritatis ea corrupti perferendis! Alias, assumenda totam.
+          </p>
+          <buttom class="btn btn-success">
+            Contact Us
+          </buttom>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    {{!--Footer section  --}}
+    <footer class="footer py-5 text-center banner1_background" style="color:blanchedalmond;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            @ copyright: <span>md bootstrape [architkumar]</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
