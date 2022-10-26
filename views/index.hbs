@@ -151,14 +151,17 @@
       <div class="container">
         <div class="row">
         <div class="col-md-12">
-          <h3>About this site</h3>
+
+          {{#each aboutus}}
+          <h3>{{this.title}}</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem laudantium expedita enim. Corrupti adipisci, minus earum dolore atque dolorem dicta. Neque unde culpa at necessitatibus adipisci eos quis dolores dolor.
-            Eum quia quas, dolor praesentium suscipit, molestias sequi est ex ipsa provident ut sed mollitia alias tempore expedita. Adipisci cumque perspiciatis distinctio dolorum, veritatis ea corrupti perferendis! Alias, assumenda totam.
+            {{this.para}}
           </p>
           <buttom class="btn btn-success">
-            Contact Us
+            {{this.linkText}}
           </buttom>
+          {{/each}}
+
         </div>
       </div>
       </div>

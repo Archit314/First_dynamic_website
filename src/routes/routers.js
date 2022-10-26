@@ -4,6 +4,7 @@ const Detail = require("../models/Detail");
 const slider = require("../models/slider");
 const servicers = require("../models/service");
 const contact = require("../models/contact");
+const about = require("../models/about");
 const { response } = require("express");
 
 
@@ -11,6 +12,7 @@ routes.get("/", async (req, res)=>{
     const details = await Detail.findOne({"_id": "6351241217742540c7788128"});
     const sliders = await slider.find();
     const services = await servicers.find();
+    const aboutes = await about.find();
 
     // console.log(details);
     // console.log(sliders);
@@ -19,6 +21,7 @@ routes.get("/", async (req, res)=>{
         details: details,
         slides:sliders,
         services:services,
+        aboutus:aboutes
     });
 })
 routes.get("/gallery", async (req, res)=>{

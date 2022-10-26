@@ -8,6 +8,7 @@ const routes = require('./routes/routers')
 const Detail = require('./models/Detail');
 const slider = require('./models/slider');
 const service = require('./models/service');
+const about = require('./models/about');
 
 
 app.use(bodyParser.urlencoded({
@@ -98,6 +99,13 @@ mongoose.connect("mongodb://localhost/foody_dynamic_website", ()=>{
     //         link:"https://www.youtube.com",
     //     },
     // ])
+
+    //initial data for about section
+    // about.create({
+    //     title:"About Us",
+    //     para:"this is our site where we provide different categories of food. Our chiefs are hygenic and make food with lots of love. Our first service is to fill our customer stomach with lots of love and tasty food.",
+    //     linkText:"Contact Us"
+    // })
 });
 
 
